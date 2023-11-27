@@ -1,7 +1,7 @@
 # morse code encrypter and decrypter.
-print ("Enter code to encrypt using Morse code: ")
+print ("Enter text to encrypt using Morse code: ")
 def morse_encrypter(message):
-    message_after_encryption = ""
+    message_after_encryption = " "
     morse_dict_1 ={'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
     'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.',
     'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
@@ -11,4 +11,10 @@ def morse_encrypter(message):
     ':': '---...', ';': '-.-.-.', '=': '-...-', '+': '.-.-.', '-': '-....-', '_': '..--.-', '"': '.-..-.',
     '$': '...-..-', '@': '.--.-.', ' ': '/'}
     message_after_encryption = "" .join (morse_dict_1.get(c,'') for c in message.upper()) 
+    if message == "":
+        print("Enter text to encrypt using Morse code:  ")
+    return message_after_encryption
+def morse_decryptor(message):
+    message_after_decryption=" "
+    
     

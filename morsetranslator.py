@@ -1,8 +1,8 @@
 # morse code encrypter and decrypter.
 print("welcome to Morse Translater")
 print ("Enter text to encrypt using Morse code: ")
-
-def morse_encrypter(message):
+#this is just a wwelcome and an introduction.
+def morse_encryptor(message):
     message_after_encryption = " "
     morse_dict_1 ={'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
     'I': '..', 'J': '.---', 
@@ -13,7 +13,10 @@ def morse_encrypter(message):
     '?': '..--..', "'": '.----.', '!': '-.-.--', '/': '-..-.', '(': '-.--.', ')': '-.--.-', '&': '.-...',
     ':': '---...', ';': '-.-.-.', '=': '-...-', '+': '.-.-.', '-': '-....-', '_': '..--.-', '"': '.-..-.',
     '$': '...-..-', '@': '.--.-.', ' ': '/'}
+     #defining the encryptor and writing the first dictionary.
     message_after_encryption = " ".join(morse_dict_1.get(character,'') for character in message.upper()) 
+    #we added join here to join all the answer in the quotation marks.
+    #next is the upper part where we add "upper " to change every thing to upper case before translating the code because the dictionary is all in uppercase.
     if message == "":
         print("Not Defined, Please Enter text to encrypt using Morse code:  ")
     return message_after_encryption
@@ -31,33 +34,15 @@ def morse_decryptor(message):
     '---...': ':', '-.-.-.': ';', '-...-': '=', '.-.-.': '+', '-....-': '-', '..--.-': '_', '.-..-.': '"',
     '...-..-': '$', '.--.-.': '@', '/': ' '}
     message_after_decryption="".join (morse_dict_2.get (character,'')for character in message.split())
+    # here we added ".join" takes all elments and joins them into a string.
+    # we used .split breaks down a bigger string into several smaller strings.
     if message== "":
         print("Not Defined, Please Enter text to decrypt using Morse code: ")
     return message_after_decryption 
 
-def morse_encrypter_arabic(message):
-    message_after_encryption_arabic = " "
-    morse_dict_3 ={'ا': '.-', 'ب': '-...', 'ث': '-.-.', 'د': '-..', 'ء': '.', 'ف': '..-.', 'غ': '--.', 'ح': '....',
-    'ي': '..', 'ج': '.---', 
-    'ك': '-.-', 'ل': '.-..', 'م': '--', 'ن': '-.', 'خ': '---',
-    'ق': '--.-', 'ر': '.-.', 'س': '...', 'ت': '-', 'ط': '..-', 'ض': '...-', 'و': '.--', 'ص': '-..-',
-    'ظ': '-.--', 'ذ': '--..','ز':'---.','ش':'----','ع':'.-.-','ه':'..-..'}
-    message_after_encryption = " ".join(morse_dict_3.get(character,'') for character in message.upper()) 
-    if message == "":
-        print("Not Defined, Please Enter text to encrypt using Morse code:  ")
-    return message_after_encryption_arabic
-
-
-
-
-
-
-
-
-
 
 while True:
-    choice = input("Choose 0 for exit, 1 for morse_encrypter, 2 for morse_decrypter, 3 for morse_ encrypter_arabic: ")
+    choice = input( "1 for morse_encrypter, 2 for morse_decrypter, or Choose 0 for exit: ")
     if choice == '0':
         break
     elif choice == '1':
@@ -65,9 +50,8 @@ while True:
         print(morse_encrypter(message))
     elif choice == '2': 
         message = input("Enter messege to decrypt: ")
-        print(morse_decryptor(message)) 
-    elif choice == '3':
-        message = input("Enter message to encrypt from arabic: ")  
-        print(morse_encrypter_arabic(message))                       
+        print(morse_decryptor(message))                   
     else: 
        print("Undifined input") 
+
+#using while loop is to keep the app going until it breaks using 0.

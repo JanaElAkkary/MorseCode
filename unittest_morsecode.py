@@ -3,7 +3,7 @@ import morsetranslator1
 class TestMorseCode(unittest.TestCase):
 
     def test_encryption_all_uppercase(self):
-        text = jana
+        text = "jana"
         expected_output= 
         self.assertEqual(morsetranslator1.morse_encryptor(text),expected_output)
 

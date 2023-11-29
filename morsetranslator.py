@@ -47,7 +47,7 @@ while True:
         break
     elif choice == '1':
         message = input("Enter messege to encrypt: ")
-        print(morse_encrypter(message))
+        print(morse_encryptor(message))
     elif choice == '2': 
         message = input("Enter messege to decrypt: ")
         print(morse_decryptor(message))                   

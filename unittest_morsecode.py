@@ -3,30 +3,44 @@ import morsetranslator1
 class TestMorseCode(unittest.TestCase):
 
     def test_encryption_all_uppercase(self):
-        text = "jana"
-        expected_output= 
+        text = "JANA"
+        expected_output=".--- .- -. .-"
         self.assertEqual(morsetranslator1.morse_encryptor(text),expected_output)
 
     def test_encryption_all_lowercase(self):
-        self.assertEqual(morsetranslator1.morse_encryptor("hello world"),".... . .-.. .-.. --- / .-- --- .-. .-.. -..")
+        text = "jana"
+        expected_output=".--- .- -. .-"
+        self.assertEqual(morsetranslator1.morse_encryptor(text),expected_output)
 
     def test_encryption_with_numbers(self):
-        self.assertEqual(morsetranslator1.morse_encryptor("H3ll0 W0r1d"),".... ...-- .-.. .-.. ----- / .-- ----- .-. .---- -..")
+        text= "jana1910"
+        expected_output=".--- .- -. .- .---- ----. .---- -----"
+        self.assertEqual(morsetranslator1.morse_encryptor(text),expected_output)
 
     def test_encryption_Characters_alphabet_numbers(self):
-        self.assertEqual(morsetranslator1.morse_encryptor("H3ll0-W0r1d!!!"),".... ...-- .-.. .-.. ----- -....- .-- ----- .-. .---- -.. -.-.-- -.-.-- -.-.--")
+        text="jana@1910"
+        expected_output = ".--- .- -. .- .--.-. .---- ----. .---- -----"
+        self.assertEqual(morsetranslator1.morse_encryptor(text),expected_output)
     
     def test_encryption_with_numbers_characters(self):
-        self.assertEqual(morsetranslator1.morse_encryptor("2023@1234--"),"..--- ----- ..--- ...-- .--.-. .---- ..--- ...-- ....- -....- -....-")
+        text= "Jana1910?."
+        expected_output= ".--- .- -. .- .---- ----. .---- ----- ..--.. .-.-.-"
+        self.assertEqual(morsetranslator1.morse_encryptor(text),expected_output)
 
     def test_decryption_without_space(self):
-        self.assertEqual(morsetranslator1.morse_decryptor(".... .."), "HI")
+        text= ".--- .- -. .-"
+        output= "JANA"
+        self.assertEqual(morsetranslator1.morse_decryptor(text), output)
     
     def test_decryption_with_spaces(self):
-        self.assertEqual(morsetranslator1.morse_decryptor(".... .. / -- -.-- / -. .- -- . / .. ... / ... .... .- .... -.."), "HI MY NAME IS SHAHD")
+        text= ".--- .- -. .- / .-- .- ... / .... . .-. ."
+        output= "JANA WAS HERE"
+        self.assertEqual(morsetranslator1.morse_decryptor(text),output)
     
     def test_decryption_numbers_characters(self):
-        self.assertEqual(morsetranslator1.morse_decryptor(".---- ..--- ...-- -....- ..--.. ..--.."),'123-??')
+        text= ".--- .- -. .- .---- ----. .---- ----- ..--.. .-.-.-"
+        output="JANA1910?."
+        self.assertEqual(morsetranslator1.morse_decryptor(text),output)
     
 
         

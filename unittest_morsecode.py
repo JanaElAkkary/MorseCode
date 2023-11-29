@@ -2,12 +2,12 @@ import unittest
 import morsetranslator1
 class TestMorseCode(unittest.TestCase):
 
-    def test_encryption_all_uppercase(self):
+    def test_encryption_uppercase(self):
         text = "JANA"
         expected_output=".--- .- -. .-"
         self.assertEqual(morsetranslator1.morse_encryptor(text),expected_output)
 
-    def test_encryption_all_lowercase(self):
+    def test_encryption_lowercase(self):
         text = "jana"
         expected_output=".--- .- -. .-"
         self.assertEqual(morsetranslator1.morse_encryptor(text),expected_output)
